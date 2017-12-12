@@ -1,0 +1,26 @@
+{
+  "name": "janeto-cli",
+  "version": "1.0.0",
+  "description": "cli tools for janetoer",
+  "main": "./index.js",
+  "bin": {
+    "janeto": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "prestart": "tsc index.ts"
+  },
+  "keywords": [
+    "janeto-cli",
+    "janeto"
+  ],
+  "author": "lexuanquynh@secure.janeto.com",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^4.0.1"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.6.0",
+    "@types/node": "^8.0.58"
+  }
+}
