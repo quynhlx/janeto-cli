@@ -1,7 +1,7 @@
 {
   "name": "janeto-cli",
   "version": "1.0.0",
-  "description": "cli tools for janetoer",
+  "description": "CLI tool for Janetoer",
   "main": "./index.js",
   "bin": {
     "janeto": "./index.js"
@@ -20,7 +20,10 @@
     "inquirer": "^4.0.1"
   },
   "devDependencies": {
-    "@angular/cli": "^1.6.0",
     "@types/node": "^8.0.58"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/npm.git"
   }
 }
