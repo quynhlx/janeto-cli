@@ -1,0 +1,24 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "trailing-comma": [false, {
+            "multiline": "always",
+            "singleline": "never"
+        }],
+        "max-line-length": {
+            "options": [120]
+        },
+        "no-console": [true],
+        "semicolon": [true, "always"],
+        "ordered-imports": [false] ,
+        "object-literal-sort-keys":false,
+        "no-var-requires":false,
+        "no-string-literal": false,
+        "no-bitwise":false
+    },
+    "rulesDirectory": []
+}

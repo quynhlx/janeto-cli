@@ -1,0 +1,42 @@
+{
+  "name": "template-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bi",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*' --exec 'ts-node --inspect -P tsconfig.json' src/app.ts | bunyan",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "bunyan": "^1.8.12",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^5.0.0-rc2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^1.0.0",
+    "@types/body-parser": "^1.16.8",
+    "@types/bunyan": "^1.8.4",
+    "@types/express": "^4.11.0",
+    "@types/express-serve-static-core": "^4.11.0",
+    "@types/jsonwebtoken": "^7.2.5",
+    "@types/mongoose": "^4.7.32",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^8.5.5",
+    "@types/sendgrid": "^4.3.0",
+    "@types/webpack": "^3.8.2",
+    "awesome-typescript-loader": "^3.4.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.7",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
+  }
+}

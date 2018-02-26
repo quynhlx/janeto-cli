@@ -1,0 +1,19 @@
+{
+    "PORT": 3000,
+    "URL": "http://localhost:4200",
+    "DB":{
+        "name":"tempServer",
+        "uri": "mongodb://localhost:27017"
+    },
+    "TokenConfig": {
+        "algorithm": "HS256",
+        "expiresIn": "7d",
+        "secretKey": "temp",
+        "resetTokenExpiresIn": "5s"
+    },
+    "MailConfig": {
+        "apiKey": "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",
+        "fromName": "Template Server",
+        "fromEmail": "phungthihaiyenit@gmail.com"
+    }
+}
