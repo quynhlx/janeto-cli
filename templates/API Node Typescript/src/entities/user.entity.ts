@@ -1,49 +1,37 @@
-import { IUser } from "../interfaces";
-import { clone } from "../utils";
-import { Roles } from "../constants";
+import { Entity, Column, PrimaryGeneratedColumn, ObjectID, ObjectIdColumn } from "typeorm";
+import { Roles } from "../constants/roles";
 
-export class User implements IUser {
-    /** create user from object */
-    public static async fromObject(obj: object): Promise<User> {
-        const user = await clone(obj, new User());
-        return user;
-    }
-    public id: string;
-    public username: string;
-    public gender: string;
-    public email: string;
-    public phone: string;
-    public avatar: string;
-    public role: string;
-    public password: string;
-    public salt: string;
-    public activated: boolean;
+@Entity()
+export class User {
+    @ObjectIdColumn()
+    _id: ObjectID;
 
-    constructor() {
-        this.id = "";
-        this.username = "";
-        this.gender = "";
-        this.email = "";
-        this.phone = "";
-        this.avatar = "";
-        this.role = Roles.User;
-        this.password = "";
-        this.salt = "";
-        this.activated = false;
-    }
+    @Column({
+        length: 100
+    })
+    username: string;
 
-    public toJS() {
-        return {
-            id: this.id,
-            username: this.username,
-            gender: this.gender,
-            email: this.email,
-            phone: this.phone,
-            avatar: this.avatar,
-            role: this.role,
-            password: this.password,
-            salt: this.salt,
-            activated : this.activated
-        };
-    }
+    @Column()
+    gender: string;
+
+    @Column()
+    email: string;
+
+    @Column()
+    phone: string;
+
+    @Column()
+    avatar: string;
+
+    @Column()
+    role: string;
+
+    @Column()
+    password: string;
+
+    @Column()
+    salt: string;
+
+    @Column()
+    activated: boolean;
 }

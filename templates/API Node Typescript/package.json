@@ -1,42 +1,44 @@
 {
-  "name": "template-server",
+  "name": "api-restful",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Bi",
-  "license": "MIT",
+  "description": "api restful",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon --watch 'src/**/*' --exec 'ts-node --inspect -P tsconfig.json' src/app.ts | bunyan",
     "build": "webpack"
   },
+  "keywords": [
+    "janeto",
+    "api",
+    "restfull",
+    "template"
+  ],
+  "author": "lexuanquynh@secure.janeto.com",
+  "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^6.2.1",
-    "bcrypt": "^1.0.3",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
     "bunyan": "^1.8.12",
-    "express": "^4.16.2",
-    "jsonwebtoken": "^8.1.0",
-    "mongoose": "^5.0.0-rc2"
+    "helmet": "^3.12.1",
+    "inversify": "^4.13.0",
+    "inversify-express-utils": "^6.0.0",
+    "mongodb": "^3.1.0",
+    "morgan": "^1.9.0",
+    "reflect-metadata": "^0.1.12",
+    "typeorm": "^0.2.7"
   },
   "devDependencies": {
-    "@types/bcrypt": "^1.0.0",
-    "@types/body-parser": "^1.16.8",
+    "@types/body-parser": "^1.17.0",
     "@types/bunyan": "^1.8.4",
-    "@types/express": "^4.11.0",
-    "@types/express-serve-static-core": "^4.11.0",
-    "@types/jsonwebtoken": "^7.2.5",
-    "@types/mongoose": "^4.7.32",
+    "@types/helmet": "0.0.37",
+    "@types/mongoose": "^5.0.15",
     "@types/morgan": "^1.7.35",
-    "@types/node": "^8.5.5",
-    "@types/sendgrid": "^4.3.0",
-    "@types/webpack": "^3.8.2",
-    "awesome-typescript-loader": "^3.4.1",
-    "clean-webpack-plugin": "^0.1.17",
-    "morgan": "^1.9.0",
-    "nodemon": "^1.14.7",
-    "ts-node": "^4.1.0",
-    "tslint": "^5.8.0",
-    "typescript": "^2.6.2",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0"
+    "@types/webpack": "^4.4.0",
+    "awesome-typescript-loader": "^5.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "nodemon": "^1.17.5",
+    "ts-node": "^6.1.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.11.1",
+    "webpack-node-externals": "^1.7.2"
   }
 }
