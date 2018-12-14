@@ -8,7 +8,7 @@ import { Repository, FindManyOptions, MongoRepository } from "typeorm";
 @injectable()
 export class UserService implements IUserService {
 
-    constructor(@inject(TYPE.UserRepository) private userRepository: MongoRepository<User>) { }
+    constructor(@inject(TYPE.UserRepository) private userRepository: Repository<User>) { }
 
     createOne(user: User): Promise<User> {
         return this.userRepository.save(user).then(user => {
@@ -41,6 +41,9 @@ export class UserService implements IUserService {
     search(query: FindManyOptions<User>, page: number = 0, pageSize: number = 10): Promise<IPagedEntities<User>> {
         query.take = pageSize;
         query.skip = page * pageSize;
+        query.order = {
+            id: 'ASC' 
+        };
         return this.userRepository.findAndCount(query).then((value) => {
             return new PagedEntities(page, pageSize, value[1], value[0]);
         });

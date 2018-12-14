@@ -1,6 +1,6 @@
 {
   "name": "janeto-cli",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "CLI tool for Janetoer",
   "main": "./index.js",
   "bin": {

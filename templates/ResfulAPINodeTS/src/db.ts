@@ -1,29 +1,21 @@
 import { createConnection } from "typeorm";
 import { User } from "./entities";
 
-/*
-Please set the env var:
-export DATABASE_USER='' \
-export DATABASE_PASSWORD='' \
-export DATABASE_HOST=localhost \
-export DATABASE_PORT=27017 \
-export DATABASE_DB=votes
-*/
-
 export async function getDbConnection() {
-
     const DATABASE_HOST = process.env.DATABASE_HOST || "localhost";
-    const DATABASE_USER = process.env.DATABASE_USER || "";
-    const DATABASE_PORT = 27017;
+    const DATABASE_USER = process.env.DATABASE_USER || "root";
+    const DATABASE_PORT = parseInt(process.env.DATABASE_PORT as string) || 3306;
     const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD || "";
-    const DATABASE_DB = "votes";
+    const DATABASE_DB = process.env.DATABASE_NAME || "default-db";
+
+    console.log(DATABASE_USER)
 
     const entities = [
         User
     ];
 
     const conn = await createConnection({
-        type: "mongodb",
+        type: "mysql",
         host: DATABASE_HOST,
         port: DATABASE_PORT,
         username: DATABASE_USER,
@@ -33,6 +25,6 @@ export async function getDbConnection() {
         synchronize: true
     });
 
-    return conn;
 
+    return conn;
 }

@@ -3,8 +3,8 @@ import { Roles } from "../constants/roles";
 
 @Entity()
 export class User {
-    @ObjectIdColumn()
-    _id: ObjectID;
+    @PrimaryGeneratedColumn()
+    id: number;
 
     @Column({
         length: 100

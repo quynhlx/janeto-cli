@@ -41,7 +41,7 @@ export class PagedEntities<T> implements IPagedEntities<T> {
         return this.page < this.lastPage;
     };
     get hasPreviousPage(): boolean {
-        return this.page > this.lastPage;
+        return this.page > this.firstPage;
     };
     constructor(public page: number, public pageSize: number, public totalSize: number, public entities: T[]) {
         this.nextPage =  this.hasNextPage? this.page + 1: this.lastPage;

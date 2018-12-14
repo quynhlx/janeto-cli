@@ -26,9 +26,9 @@ export class UserController {
     public async search(
         @request() req: express.Request,
         @response() res: express.Response) {
-        var page = req.params.page;
-        var pageSize = req.params.pageSize;
-        var options = req.params;
+        var page = Number.parseInt(req.query.page || 0);
+        var pageSize =  Number.parseInt(req.query.pageSize || 0);
+        var options = req.query;
 
         try {
             return this.userService.search(options, page, pageSize);
