@@ -1,16 +1,10 @@
 import 'reflect-metadata';
-import * as dotenv from 'dotenv';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import * as bodyParser from 'body-parser';
 import * as helmet from 'helmet';
 import * as morgan from 'morgan';
 import { container } from './ioc/container';
 import { bindings } from './ioc/binding';
-
-if(process.env.NODE_ENV !== 'production'){
-  dotenv.load();
-}
-
 (async () => {
   // start the server
   await container.loadAsync(bindings);
